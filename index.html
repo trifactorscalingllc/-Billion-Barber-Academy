@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      // Suppress the 'Cannot set property fetch of #<Window>' error
+      // which is likely caused by an external script or environment HMR
+      // trying to overwrite the read-only global fetch.
+      (function() {
+        const originalFetch = window.fetch;
+        Object.defineProperty(window, 'fetch', {
+          get: function() { return originalFetch; },
+          set: function() { 
+            console.warn("Attempt to overwrite window.fetch was suppressed.");
+          },
+          configurable: true
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
