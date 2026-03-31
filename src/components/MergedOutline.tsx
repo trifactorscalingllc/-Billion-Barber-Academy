@@ -24,12 +24,13 @@ export default function MergedOutline({
     <span className={cn("relative inline-block tracking-tighter px-[0.1em]", className)}>
       {/* Merged Outline Layer */}
       <span 
-        className="absolute inset-0 flex items-center justify-center select-none pointer-events-none" 
+        className="absolute inset-0 flex items-center justify-center select-none pointer-events-none merged-outline-layer" 
         style={{ 
-          WebkitTextStroke: `${strokeWidth} ${strokeColor}`,
+          '--desktop-stroke': strokeWidth,
+          '--stroke-color': strokeColor,
           paintOrder: 'stroke fill',
           color: 'transparent'
-        }}
+        } as any}
         aria-hidden="true"
       >
         {children}

@@ -46,24 +46,24 @@ export default function App() {
       <Navbar onApply={() => setIsFormOpen(true)} />
       
       <main className="relative z-10">
-        <Hero />
+        <Hero onApply={() => setIsFormOpen(true)} />
         
         <Authority />
         
         <Proof />
 
         {/* Final CTA Section */}
-        <section className="py-16 md:py-32 px-2 md:px-4 text-center bg-black">
+        <section className="py-16 md:py-32 px-2 md:px-4 text-center bg-black overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full md:w-[50%] mx-auto p-4 md:p-16 relative"
+            className="w-full md:w-[50%] mx-auto p-4 md:p-16 relative will-change-transform"
           >
-            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black uppercase italic leading-none mb-12 relative z-10 flex flex-col items-center gap-4">
-              <span className="text-white">READY TO</span>
-              <MergedOutline strokeWidth="4px">SCALE?</MergedOutline>
+            <h2 className="text-2xl sm:text-4xl md:text-6xl font-black uppercase italic leading-none mb-12 relative z-10 flex flex-col items-center gap-4">
+              <span className="text-white text-xl sm:text-2xl md:text-3xl">Apply for</span>
+              <MergedOutline strokeWidth="4px">1-on-1 coaching</MergedOutline>
             </h2>
             <InlineForm />
           </motion.div>
@@ -73,7 +73,13 @@ export default function App() {
       </main>
 
       <footer className="py-24 px-4 border-t border-white/5 text-center relative z-10 bg-black">
-        <div className="flex flex-col items-center gap-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-center gap-12 will-change-transform"
+        >
           <div className="technical-label">
             BOOK AN APPOINTMENT
           </div>
@@ -98,7 +104,7 @@ export default function App() {
                 fill="currentColor" 
                 className="w-5 h-5 group-hover:scale-110 transition-transform"
               >
-                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-.13-.08-.26-.17-.38-.26v5.48c.01 1.89-.4 3.81-1.58 5.2a7.07 7.07 0 0 1-5.2 2.62c-1.9.1-3.94-.31-5.47-1.54a7.18 7.18 0 0 1-2.7-5.41 7.1 7.1 0 0 1 2.98-5.7c1.5-1.08 3.39-1.51 5.23-1.29.19.02.39.05.58.09V9.16c-.49-.17-.99-.26-1.5-.3-1.28-.09-2.6.24-3.55 1.11-.9.8-1.41 2.01-1.39 3.23.02 1.22.51 2.45 1.41 3.23.91.79 2.1 1.13 3.3 1.03 1.11-.09 2.14-.66 2.77-1.57.6-.88.75-2.02.74-3.08V.02z"/>
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path>
               </svg>
             </a>
             <a 
@@ -124,7 +130,7 @@ export default function App() {
               TFS LLC
             </a>
           </div>
-        </div>
+        </motion.div>
       </footer>
 
       <ApplicationForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />

@@ -135,6 +135,22 @@
     scrollbar-width: none;
   }
 
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+  }
+
+  .merged-outline-layer {
+    -webkit-text-stroke: var(--desktop-stroke) var(--stroke-color);
+  }
+
+  @media (max-width: 768px) {
+    .merged-outline-layer {
+      /* Thinner stroke on mobile to prevent "clumping" of letters */
+      -webkit-text-stroke: calc(var(--desktop-stroke) * 0.5) var(--stroke-color);
+    }
+  }
+
   /* Custom Scrollbar - Hidden globally but keeping logic for reference if needed */
   /* 
   ::-webkit-scrollbar {

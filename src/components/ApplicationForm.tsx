@@ -124,10 +124,10 @@ export default function ApplicationForm({ isOpen, onClose }: ApplicationFormProp
 
               <button 
                 onClick={handleNext}
-                className="w-full mt-12 bg-brand-gold text-black font-black uppercase italic py-6 brutalist-card flex items-center justify-center gap-2 hover:opacity-90 active:bg-white active:scale-[0.98] transition-all shadow-2xl btn-sheen"
+                className="w-full mt-8 md:mt-12 bg-brand-gold text-black font-black uppercase italic py-4 md:py-6 text-sm md:text-base brutalist-card flex items-center justify-center gap-2 hover:opacity-90 active:bg-white active:scale-[0.98] transition-all shadow-2xl btn-sheen"
               >
                 {step === totalSteps ? 'Complete Application' : 'Next Step'}
-                <ChevronRight size={20} />
+                <ChevronRight size={20} className="w-4 h-4 md:w-5 md:h-5" />
               </button>
             </div>
           </motion.div>

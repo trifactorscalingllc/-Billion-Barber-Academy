@@ -29,14 +29,20 @@ const caseStudies = [
 
 export default function Proof() {
   return (
-    <section id="results" className="py-12 md:py-24 px-4">
+    <section id="results" className="py-12 md:py-24 px-4 content-visibility-auto">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-16 will-change-transform"
+        >
           <h2 className="text-sm font-black text-brand-gold tracking-[0.3em] uppercase mb-4">The Proof</h2>
           <h3 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase italic leading-none">
-            Client <MergedOutline strokeWidth="3px" strokeColor="white">Journeys</MergedOutline>
+            My <MergedOutline strokeWidth="3px" strokeColor="white">Students</MergedOutline>
           </h3>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-2 gap-3 md:gap-12 max-w-4xl mx-auto">
           {caseStudies.map((study, index) => (
@@ -50,7 +56,7 @@ export default function Proof() {
                 ease: [0.22, 1, 0.36, 1]
               }}
               viewport={{ once: true, margin: "-50px" }}
-              className="group relative aspect-[3/4.5] brutalist-card bg-black overflow-hidden shadow-2xl"
+              className="group relative aspect-[3/4.5] brutalist-card bg-black overflow-hidden shadow-2xl will-change-transform"
             >
               {/* Background Image */}
               <img 
@@ -58,6 +64,7 @@ export default function Proof() {
                 alt={study.name} 
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
               
               {/* Gradient Overlay */}
@@ -118,7 +125,13 @@ export default function Proof() {
         </div>
 
         {/* Visual Badges */}
-        <div className="mt-20 flex justify-center items-center gap-4 sm:gap-8 md:gap-16 opacity-50 overflow-x-auto no-scrollbar py-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-20 flex justify-center items-center gap-4 sm:gap-8 md:gap-16 opacity-50 overflow-x-auto no-scrollbar py-4 will-change-transform"
+        >
            <div className="flex flex-col items-center gap-2 flex-shrink-0">
               <Users size={24} className="md:size-8" />
               <span className="text-[8px] md:text-[10px] uppercase font-black tracking-widest whitespace-nowrap">500+ Barbers Scaled</span>
@@ -131,7 +144,7 @@ export default function Proof() {
               <TrendingUp size={24} className="md:size-8" />
               <span className="text-[8px] md:text-[10px] uppercase font-black tracking-widest whitespace-nowrap">6-Figure Blueprint</span>
            </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
