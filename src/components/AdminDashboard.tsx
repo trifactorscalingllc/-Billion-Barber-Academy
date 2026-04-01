@@ -33,12 +33,12 @@ export default function AdminDashboard() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 brutalist-card bg-black"
+              className="p-8 glass-card bg-black/40 backdrop-blur-xl"
             >
               <div className="flex items-center justify-between mb-6">
                 <stat.icon size={20} className="text-brand-gold" />
                 <span className={cn(
-                  "technical-label px-2 py-1 bg-white/5",
+                  "technical-label px-2 py-1 bg-white/5 rounded-full",
                   stat.change.startsWith('+') ? "text-brand-gold" : "text-red-500"
                 )}>
                   {stat.change}
@@ -51,7 +51,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Drop-off Visualization */}
-        <div className="p-12 brutalist-card bg-black">
+        <div className="p-12 glass-card bg-black/40 backdrop-blur-xl">
           <h4 className="technical-label mb-12">Conversion Flow</h4>
           <div className="space-y-10">
             {[
@@ -65,7 +65,7 @@ export default function AdminDashboard() {
                   <span className="text-white">{flow.step}</span>
                   <span className="text-white/40">{flow.count.toLocaleString()} ({flow.percent}%)</span>
                 </div>
-                <div className="h-1 w-full bg-white/5 rounded-none overflow-hidden">
+                <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     whileInView={{ width: `${flow.percent}%` }}

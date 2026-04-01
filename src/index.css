@@ -109,8 +109,40 @@
     @apply translate-x-full;
   }
 
-  .brutalist-card {
-    @apply border border-white/10 transition-all duration-300 rounded-none;
+  .text-barber-pole {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #ef4444 0px,
+      #ef4444 12px,
+      #ffffff 12px,
+      #ffffff 24px,
+      #3b82f6 24px,
+      #3b82f6 36px,
+      #ffffff 36px,
+      #ffffff 48px
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: barberpole 30s linear infinite;
+  }
+
+  @keyframes barberpole {
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
+  .border-barber-subtle {
+    box-shadow: 
+      -2px -2px 4px 0px rgba(59, 130, 246, 0.6), 
+      2px 2px 4px 0px rgba(239, 68, 68, 0.6),
+      0 0 30px rgba(255, 215, 0, 0.2);
+  }
+
+  .glass-card {
+    @apply border border-white/10 transition-all duration-300 rounded-3xl bg-white/5 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)];
   }
   
   .technical-label {

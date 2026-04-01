@@ -27,9 +27,45 @@ const caseStudies = [
   }
 ];
 
+const studentReviews = [
+  "https://i.ibb.co/TMHKDDZ9/image33.png",
+  "https://i.ibb.co/CpFSMSHT/image32.png",
+  "https://i.ibb.co/m52pj5FD/image30.png",
+  "https://i.ibb.co/WNhXtvzR/image31.png",
+  "https://i.ibb.co/twgW01Ms/image29.png",
+  "https://i.ibb.co/WvYSJmg9/image28.png",
+  "https://i.ibb.co/wZL5r7Y2/image27.png",
+  "https://i.ibb.co/HfGrLvZd/image26.png",
+  "https://i.ibb.co/mrF4VyMn/image25.png",
+  "https://i.ibb.co/WpnxMJ5K/image24.png",
+  "https://i.ibb.co/20yrhSzv/image23.png",
+  "https://i.ibb.co/q8wqMPn/image22.png",
+  "https://i.ibb.co/MyK3dtPJ/image21.png",
+  "https://i.ibb.co/0jJ95J76/image20.png",
+  "https://i.ibb.co/m5LD5ZdW/image19.png",
+  "https://i.ibb.co/XfdBQj1w/image18.png",
+  "https://i.ibb.co/211XY3MJ/image17.png",
+  "https://i.ibb.co/xqcpCjjk/image16.png",
+  "https://i.ibb.co/fVF2YRvm/image15.png",
+  "https://i.ibb.co/sJdNTHSY/image14.png",
+  "https://i.ibb.co/Q3hTsJG4/image13.png",
+  "https://i.ibb.co/R4vwnMqW/image12.png",
+  "https://i.ibb.co/r2FXkV2c/image11.png",
+  "https://i.ibb.co/MkRCQSjF/image10.png",
+  "https://i.ibb.co/rGt320rx/image9.png",
+  "https://i.ibb.co/394T6KV0/image8.png",
+  "https://i.ibb.co/35Skg1zc/image7.png",
+  "https://i.ibb.co/DHkZNyV5/image6.png",
+  "https://i.ibb.co/zWwjgTBT/image5.png",
+  "https://i.ibb.co/nM3nsjfT/image4.png",
+  "https://i.ibb.co/mrM0D6Nj/image3.png",
+  "https://i.ibb.co/v6vWC4nd/image2.png",
+  "https://i.ibb.co/39fmPhBJ/image.png"
+];
+
 export default function Proof() {
   return (
-    <section id="results" className="py-12 md:py-24 px-4 content-visibility-auto">
+    <section id="results" className="py-12 md:py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -39,87 +75,65 @@ export default function Proof() {
           className="text-center mb-16 will-change-transform"
         >
           <h2 className="text-sm font-black text-brand-gold tracking-[0.3em] uppercase mb-4">The Proof</h2>
-          <h3 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase italic leading-none">
-            My <MergedOutline strokeWidth="3px" strokeColor="white">Students</MergedOutline>
+          <h3 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase italic leading-none flex flex-col items-center gap-2">
+            <span className="text-white text-xl sm:text-2xl md:text-3xl">WHAT MY STUDENTS</span>
+            <MergedOutline strokeWidth="3px" strokeColor="white">HAVE TO SAY</MergedOutline>
           </h3>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-3 md:gap-12 max-w-4xl mx-auto">
+        <div className="flex justify-center flex-wrap gap-4 md:gap-8 max-w-4xl mx-auto mb-16">
           {caseStudies.map((study, index) => (
-            <motion.div
+            <motion.a
               key={study.name}
-              initial={{ opacity: 0, y: 40, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              href={study.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ 
-                duration: 0.8, 
-                delay: index * 0.15,
+                duration: 0.5, 
+                delay: index * 0.1,
                 ease: [0.22, 1, 0.36, 1]
               }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="group relative aspect-[3/4.5] brutalist-card bg-black overflow-hidden shadow-2xl will-change-transform"
+              viewport={{ once: true }}
+              className="flex items-center gap-3 md:gap-4 p-2 pr-6 md:p-3 md:pr-8 glass-card rounded-full hover:bg-white/10 transition-all group border border-white/10 shadow-lg"
             >
-              {/* Background Image */}
               <img 
                 src={study.image} 
                 alt={study.name} 
-                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-brand-gold group-hover:scale-105 transition-transform"
                 referrerPolicy="no-referrer"
-                loading="lazy"
               />
-              
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 hq-overlay" />
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8 text-white">
-                <div className="flex items-center gap-1 md:gap-2 mb-2 md:mb-6">
-                  <h4 className="text-xs sm:text-sm md:text-3xl font-black uppercase italic leading-none truncate">{study.name}</h4>
-                  <CheckCircle2 size={10} className="text-blue-500 md:w-[18px] md:h-[18px] flex-shrink-0" />
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1">
+                  <span className="text-base md:text-xl font-black uppercase italic leading-none">{study.name}</span>
+                  <CheckCircle2 size={12} className="text-blue-500" />
                 </div>
-
-                {/* Stats Row */}
-                <div className="flex items-center justify-between mb-4 md:mb-8 px-0.5 md:px-2">
-                  <div className="text-center flex-1 min-w-0">
-                    <div className="flex items-center justify-center gap-0.5 md:gap-1 technical-value text-[clamp(8px,2.5vw,10px)] md:text-sm">
-                      {study.rating} <Star size={8} className="text-brand-gold fill-current md:w-[12px] md:h-[12px] flex-shrink-0" />
-                    </div>
-                    <div className="technical-label mt-0.5 md:mt-1 text-[clamp(6px,2vw,8px)] md:text-[10px]">Rating</div>
-                  </div>
-                  
-                  <div className="w-px h-4 md:h-8 bg-white/10 flex-shrink-0 mx-1" />
-                  
-                  <div className="text-center flex-1 min-w-0">
-                    <div className="technical-value text-[clamp(8px,2.5vw,10px)] md:text-sm truncate">{study.projects}</div>
-                    <div className="technical-label mt-0.5 md:mt-1 text-[clamp(6px,2vw,8px)] md:text-[10px]">Cuts</div>
-                  </div>
-                  
-                  <div className="w-px h-4 md:h-8 bg-white/10 flex-shrink-0 mx-1" />
-                  
-                  <div className="text-center flex-1 min-w-0">
-                    <div className="technical-value text-[clamp(8px,2.5vw,10px)] md:text-sm text-brand-gold truncate">
-                      <span className="md:hidden">{study.shortMetric}</span>
-                      <span className="hidden md:inline">{study.metric}</span>
-                    </div>
-                    <div className="technical-label mt-0.5 md:mt-1 text-[clamp(6px,2vw,8px)] md:text-[10px] truncate">
-                      <span className="md:hidden">{study.shortTimeframe}</span>
-                      <span className="hidden md:inline">{study.timeframe}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Buttons */}
-                <div className="flex gap-2">
-                  <a 
-                    href={study.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 border border-brand-gold md:border-2 text-white h-7 md:h-12 font-black flex items-center justify-center gap-1 md:gap-2 hover:bg-brand-gold/10 active:bg-white active:text-black transition-all btn-sheen shadow-xl"
-                  >
-                    <Instagram size={10} className="text-brand-gold md:w-[16px] md:h-[16px]" />
-                    <span className="text-[7px] sm:text-[8px] md:text-[10px] uppercase tracking-[0.1em] md:tracking-[0.2em]">IG Profile</span>
-                  </a>
-                </div>
+                <span className="text-[10px] md:text-xs text-brand-gold flex items-center gap-1 mt-1 font-medium">
+                  <Instagram size={12} /> @{study.instagram.split('/').filter(Boolean).pop()}
+                </span>
               </div>
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Student Reviews Grid */}
+        <div className="mt-16 grid grid-cols-2 gap-4 max-w-4xl mx-auto">
+          {studentReviews.map((src, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "100px" }}
+              transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
+              className="overflow-hidden rounded-xl min-h-[100px] flex items-center justify-center"
+            >
+              <img 
+                src={src} 
+                alt={`Student review ${index + 1}`} 
+                className="w-full h-auto object-cover"
+                referrerPolicy="no-referrer"
+              />
             </motion.div>
           ))}
         </div>

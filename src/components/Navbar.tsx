@@ -14,10 +14,18 @@ export default function Navbar({ onApply }: NavbarProps) {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="fixed top-0 left-0 w-full z-50 px-4 py-6"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between brutalist-card bg-black px-4 md:px-8 py-3 md:py-4 border-white/10 shadow-2xl">
-        <div className="flex items-center gap-2 md:gap-4">
-          <span className="font-black uppercase tracking-tighter text-sm sm:text-base md:text-xl italic leading-none flex items-center gap-1">
-            $Billion Barber <span className="text-brand-gold">Academy</span>
+      <div className="max-w-7xl mx-auto flex items-center justify-between glass-card rounded-full bg-black/40 backdrop-blur-xl px-4 md:px-8 py-3 md:py-4 border-white/10 shadow-2xl relative">
+        <div className="flex items-center gap-2 md:gap-4 z-10">
+          <a href="/" className="block">
+            <img 
+              src="https://i.ibb.co/N25g2k75/logo-transparent.png" 
+              alt="logo transparent" 
+              className="h-10 md:h-14 object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]"
+              referrerPolicy="no-referrer"
+            />
+          </a>
+          <span className="font-black uppercase tracking-tighter text-sm sm:text-base md:text-xl italic leading-none flex items-center gap-1 hidden sm:flex">
+            <span className="text-brand-gold">$</span>Billion Barber <span className="text-brand-gold">Academy</span>
           </span>
         </div>
 
@@ -25,7 +33,7 @@ export default function Navbar({ onApply }: NavbarProps) {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden md:flex items-center gap-6"
+          className="hidden md:flex items-center gap-6 z-10"
         >
           <div className="flex items-center gap-12 mr-8">
             <motion.a 
@@ -49,19 +57,19 @@ export default function Navbar({ onApply }: NavbarProps) {
           </div>
           <button 
             onClick={onApply}
-            className="bg-brand-gold text-black px-10 py-4 brutalist-card text-xs font-black uppercase italic hover:opacity-90 active:bg-white active:scale-95 transition-all btn-sheen shadow-2xl"
+            className="bg-brand-gold text-black px-10 py-4 glass-card rounded-full text-xs font-black uppercase italic hover:opacity-90 active:bg-white active:scale-95 transition-all btn-sheen border-barber-subtle"
           >
             Apply
           </button>
         </motion.div>
 
-        <div className="md:hidden w-10 h-6">
-          <img 
-            src="https://i.ibb.co/pjB1MHPN/656220402-833597619777157-1121401611018245679-n-removebg-preview-1.png" 
-            alt="Logo" 
-            className="w-full h-full object-contain" 
-            referrerPolicy="no-referrer"
-          />
+        <div className="md:hidden z-10">
+          <button 
+            onClick={onApply}
+            className="bg-brand-gold text-black px-6 py-2 glass-card rounded-full text-[10px] font-black uppercase italic hover:opacity-90 active:bg-white active:scale-95 transition-all btn-sheen border-barber-subtle"
+          >
+            Apply
+          </button>
         </div>
       </div>
     </motion.nav>

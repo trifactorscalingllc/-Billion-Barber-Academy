@@ -16,7 +16,7 @@ export default function Authority() {
         >
           <h2 className="text-sm font-black text-brand-gold tracking-[0.3em] uppercase mb-4">The Authority</h2>
           <h3 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase italic leading-none flex flex-col items-center gap-2">
-            <span>From a Small Town to</span>
+            <span>From a <span className="text-blue-400/80">Small Town</span> to</span>
             <MergedOutline strokeWidth="3px">$30k+ Months.</MergedOutline>
           </h3>
         </motion.div>
@@ -32,10 +32,10 @@ export default function Authority() {
           >
             <div className="space-y-6 text-white/70 text-base md:text-lg leading-relaxed">
             <p>
-              I started where most of you are. Stuck in a chair, grinding 12 hours a day, trading time for pennies. I had the skills, but I didn't have the <span className="text-brand-gold font-bold">system.</span>
+              I started exactly where a lot of you are—grinding <span className="text-red-400/80">12-hour days</span> right out of my mom's basement with just a pair of clippers and a phone. I had the skills, but I needed the right <span className="text-brand-gold font-bold">system.</span>
             </p>
             <p>
-              By combining high-level barbering with a strategic digital presence, I moved from a limited environment to a high-ticket lifestyle using only <span className="text-brand-gold font-bold italic underline decoration-brand-gold">clippers and a phone.</span>
+              By combining high-level barbering with a strategic digital presence, I started clearing $10k+ a month before I even left that basement. I bought my dream car at 18, and eventually traded that limited environment for a penthouse in Miami.
             </p>
           </div>
           
@@ -45,7 +45,7 @@ export default function Authority() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="hidden md:block mt-10 p-6 border-l-4 border-brand-gold bg-brand-gold/5 italic font-bold text-lg md:text-xl will-change-transform"
+            className="hidden md:block mt-10 p-6 border-l-4 border-brand-gold bg-brand-gold/5 rounded-r-2xl italic font-bold text-lg md:text-xl will-change-transform"
           >
             "Barbers don't need a big following to convert—they need the right system."
           </motion.div>
@@ -59,7 +59,7 @@ export default function Authority() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="relative order-2 mt-8 md:mt-0 will-change-transform"
         >
-          <div className="aspect-[4/5] brutalist-card bg-black overflow-hidden border-brand-gold/30 shadow-2xl relative">
+          <div className="aspect-[4/5] glass-card bg-black/40 overflow-hidden border-brand-gold/30 shadow-2xl relative">
             <img 
               src="https://i.ibb.co/23FxGKfd/image-2026-03-30-003054012.png" 
               alt="The Hustle" 
@@ -75,7 +75,7 @@ export default function Authority() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="md:hidden absolute -bottom-6 left-4 right-4 p-4 border-l-4 border-brand-gold bg-black/90 backdrop-blur-md brutalist-card italic font-bold text-sm z-20 shadow-2xl will-change-transform"
+            className="md:hidden absolute -bottom-6 left-4 right-4 p-4 border-l-4 border-brand-gold bg-black/90 backdrop-blur-md glass-card italic font-bold text-sm z-20 shadow-2xl will-change-transform"
           >
             "Barbers don't need a big following to convert—they need the right system."
           </motion.div>

@@ -10,6 +10,8 @@ import InlineForm from './components/InlineForm';
 import AdminDashboard from './components/AdminDashboard';
 import MergedOutline from './components/MergedOutline';
 
+import LiquidBackground from './components/LiquidBackground';
+
 export default function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
@@ -34,8 +36,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-brand-black selection:bg-brand-gold selection:text-black relative">
-      {/* Global Background Glow */}
-      <div className="absolute inset-0 hq-gradient-gold pointer-events-none z-0" />
+      <LiquidBackground />
       
       {/* Progress Bar */}
       <motion.div 
@@ -53,7 +54,7 @@ export default function App() {
         <Proof />
 
         {/* Final CTA Section */}
-        <section className="py-16 md:py-32 px-2 md:px-4 text-center bg-black overflow-hidden">
+        <section className="py-16 md:py-32 px-2 md:px-4 text-center relative z-10 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +63,7 @@ export default function App() {
             className="w-full md:w-[50%] mx-auto p-4 md:p-16 relative will-change-transform"
           >
             <h2 className="text-2xl sm:text-4xl md:text-6xl font-black uppercase italic leading-none mb-12 relative z-10 flex flex-col items-center gap-4">
-              <span className="text-white text-xl sm:text-2xl md:text-3xl">Apply for</span>
+              <span className="text-white text-xl sm:text-2xl md:text-3xl">Apply <span className="text-blue-400/80">for</span></span>
               <MergedOutline strokeWidth="4px">1-on-1 coaching</MergedOutline>
             </h2>
             <InlineForm />
@@ -72,7 +73,7 @@ export default function App() {
         {showAdmin && <AdminDashboard />}
       </main>
 
-      <footer className="py-24 px-4 border-t border-white/5 text-center relative z-10 bg-black">
+      <footer className="py-24 px-4 border-t border-white/5 text-center relative z-10 bg-black/40 backdrop-blur-xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,16 +81,21 @@ export default function App() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center gap-12 will-change-transform"
         >
-          <div className="technical-label">
+          <a 
+            href="https://getsquire.com/booking/book/dacks-shop-schnecksville/barber/dack-1/services"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="technical-label px-6 py-3 glass-card rounded-full hover:bg-white/10 transition-all border border-white/20 hover:border-white/40 inline-block"
+          >
             BOOK AN APPOINTMENT
-          </div>
+          </a>
 
           <div className="flex items-center gap-4">
             <a 
               href="https://www.instagram.com/cutbydack" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-12 h-12 brutalist-card border-brand-gold text-white flex items-center justify-center hover:bg-brand-gold hover:text-black active:bg-white group transition-all"
+              className="w-12 h-12 glass-card rounded-full border-brand-gold text-white flex items-center justify-center hover:bg-brand-gold hover:text-black active:bg-white group transition-all"
             >
               <Instagram size={20} className="group-hover:scale-110 transition-transform" />
             </a>
@@ -97,7 +103,7 @@ export default function App() {
               href="https://www.tiktok.com/@cutbydack" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-12 h-12 brutalist-card border-brand-gold text-white flex items-center justify-center hover:bg-brand-gold hover:text-black active:bg-white group transition-all"
+              className="w-12 h-12 glass-card rounded-full border-brand-gold text-white flex items-center justify-center hover:bg-brand-gold hover:text-black active:bg-white group transition-all"
             >
               <svg 
                 viewBox="0 0 24 24" 
@@ -111,7 +117,7 @@ export default function App() {
               href="https://www.youtube.com/@uncutdack" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-12 h-12 brutalist-card border-brand-gold text-white flex items-center justify-center hover:bg-brand-gold hover:text-black active:bg-white group transition-all"
+              className="w-12 h-12 glass-card rounded-full border-brand-gold text-white flex items-center justify-center hover:bg-brand-gold hover:text-black active:bg-white group transition-all"
             >
               <Youtube size={20} className="group-hover:scale-110 transition-transform" />
             </a>

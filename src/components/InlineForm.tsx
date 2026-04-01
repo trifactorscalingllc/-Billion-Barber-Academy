@@ -17,7 +17,7 @@ export default function InlineForm() {
   };
 
   return (
-    <div className="w-full mx-auto brutalist-card bg-black overflow-hidden relative z-10 shadow-[0_0_100px_rgba(0,0,0,1)]">
+    <div className="w-full mx-auto glass-card bg-black/40 backdrop-blur-xl overflow-hidden relative z-10 shadow-[0_0_100px_rgba(0,0,0,1)]">
       <div className="p-8 md:p-16">
         <div className="mb-12">
           <div className="flex justify-between items-center mb-6">
@@ -35,7 +35,7 @@ export default function InlineForm() {
             </div>
           </div>
           <h3 className="text-2xl md:text-4xl font-black uppercase italic leading-none text-white tracking-tighter">
-            Lock In Your Spot
+            Lock In <span className="text-red-400/80">Your</span> Spot
           </h3>
         </div>
 
@@ -50,11 +50,11 @@ export default function InlineForm() {
               <div className="space-y-4">
                 <label className="block">
                   <span className="technical-label block mb-2">Full Name</span>
-                  <input type="text" className="w-full bg-white/5 border border-white/10 p-4 focus:border-brand-gold outline-none transition-all text-white font-mono text-sm" placeholder="John Doe" />
+                  <input type="text" className="w-full bg-white/5 border border-white/10 p-4 rounded-2xl focus:border-brand-gold outline-none transition-all text-white font-mono text-sm" placeholder="John Doe" />
                 </label>
                 <label className="block">
                   <span className="technical-label block mb-2">Instagram Handle</span>
-                  <input type="text" className="w-full bg-white/5 border border-white/10 p-4 focus:border-brand-gold outline-none transition-all text-white font-mono text-sm" placeholder="@yourhandle" />
+                  <input type="text" className="w-full bg-white/5 border border-white/10 p-4 rounded-2xl focus:border-brand-gold outline-none transition-all text-white font-mono text-sm" placeholder="@yourhandle" />
                 </label>
               </div>
             </motion.div>
@@ -71,7 +71,7 @@ export default function InlineForm() {
                 {['Low Prices', 'No Consistent Leads', 'Trading Time for Money', 'Lack of Systems'].map((option) => (
                   <button 
                     key={option} 
-                    className="w-full text-left p-6 brutalist-card bg-black hover:border-brand-gold group h-full flex flex-col justify-between"
+                    className="w-full text-left p-6 glass-card bg-black/40 hover:border-brand-gold group h-full flex flex-col justify-between"
                   >
                     <div className="technical-label mb-4 opacity-100">Bottleneck</div>
                     <div className="flex justify-between items-end">
@@ -91,7 +91,7 @@ export default function InlineForm() {
               className="space-y-6 text-left"
             >
               <p className="text-white/60">Final step before the redirect.</p>
-              <div className="p-8 brutalist-card border-brand-gold/20 bg-brand-gold/5">
+              <div className="p-8 glass-card border-brand-gold/20 bg-brand-gold/5">
                 <div className="technical-label text-brand-gold mb-4 opacity-100">System Ready</div>
                 <h4 className="text-2xl font-black uppercase italic mb-2">Ready to scale?</h4>
                 <p className="text-sm text-white/60">By clicking below, you'll be redirected to the Whop ecosystem where the real work begins.</p>
@@ -102,7 +102,7 @@ export default function InlineForm() {
 
         <button 
           onClick={handleNext}
-          className="w-full mt-8 md:mt-12 bg-brand-gold text-black font-black uppercase italic py-4 md:py-6 text-sm md:text-base brutalist-card flex items-center justify-center gap-2 hover:opacity-90 active:bg-white active:scale-[0.98] transition-all shadow-2xl btn-sheen"
+          className="w-full mt-8 md:mt-12 bg-brand-gold text-black font-black uppercase italic py-4 md:py-6 text-sm md:text-base glass-card rounded-full flex items-center justify-center gap-2 hover:opacity-90 active:bg-white active:scale-[0.98] transition-all shadow-2xl btn-sheen"
         >
           {step === totalSteps ? 'Complete Application' : 'Next Step'}
           <ChevronRight size={20} className="w-4 h-4 md:w-5 md:h-5" />
